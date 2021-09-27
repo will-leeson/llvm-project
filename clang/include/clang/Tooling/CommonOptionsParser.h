@@ -64,7 +64,7 @@ namespace tooling {
 /// \endcode
 class CommonOptionsParser {
 
-protected:
+public:
   /// Parses command-line, initializes a compilation database.
   ///
   /// This constructor can change argc and argv contents, e.g. consume
@@ -77,8 +77,6 @@ protected:
       int &argc, const char **argv, llvm::cl::OptionCategory &Category,
       llvm::cl::NumOccurrencesFlag OccurrencesFlag = llvm::cl::OneOrMore,
       const char *Overview = nullptr);
-
-public:
   /// A factory method that is similar to the above constructor, except
   /// this returns an error instead exiting the program on error.
   static llvm::Expected<CommonOptionsParser>
